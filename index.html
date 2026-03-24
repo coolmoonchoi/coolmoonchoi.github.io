@@ -108,9 +108,13 @@
     .risk-bar { height: 4px; border-radius: 2px; margin-top: 8px; background: var(--border); }
     .risk-bar-fill { height: 100%; border-radius: 2px; }
 
+    /* TABLE SCROLL WRAPPER */
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; width: 100%; }
+    .table-scroll table { min-width: 500px; }
+
     /* COMPARISON TABLE */
-    .comp-table { width: 100%; border-collapse: separate; border-spacing: 0; }
-    .comp-table th { text-align: left; padding: 12px 16px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-weight: 600; border-bottom: 2px solid var(--border); }
+    .comp-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 500px; }
+    .comp-table th { text-align: left; padding: 12px 16px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-secondary); font-weight: 600; border-bottom: 2px solid var(--border); white-space: nowrap; }
     .comp-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 0.9rem; vertical-align: top; }
     .comp-table tr:last-child td { border-bottom: none; }
     .comp-table .highlight { color: var(--accent); font-weight: 600; }
@@ -352,7 +356,10 @@
       .section { padding: 40px 0; }
       .nav-tabs { display: none; }
       .nav-hamburger { display: flex; }
-      .comp-table { font-size: 0.8rem; display: block; overflow-x: auto; }
+      .comp-table { font-size: 0.8rem; }
+      .table-scroll { margin: 0 -16px; padding: 0 16px; }
+      .chart-fallback { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .chart-fallback table { min-width: 400px; }
     }
     @media (max-width: 375px) {
       body { overflow-x: hidden; }
@@ -1028,8 +1035,8 @@
         </div>
 
         <h3 style="margin-bottom:16px;">경쟁 환경 비교</h3>
-        <div class="card" style="overflow-x:auto;">
-          <table class="comp-table">
+        <div class="card">
+          <div class="table-scroll"><table class="comp-table">
             <thead><tr><th>플랫폼</th><th>포지션</th><th>강점</th><th>약점</th><th>MOONNS 100 공략점</th></tr></thead>
             <tbody>
               <tr><td><strong>29CM</strong></td><td>라이프스타일 셀렉트</td><td>15년 노하우, 1.3조 거래액</td><td>기업 중심, 콘텐츠 비용 높음</td><td class="highlight">개인 큐레이터 친밀감</td></tr>
@@ -1038,7 +1045,7 @@
               <tr><td><strong>쿠팡</strong></td><td>가격/속도</td><td>43% 시장 점유, 로켓배송</td><td>큐레이션 신뢰도 낮음</td><td class="highlight">취향 기반 vs 가격 기반</td></tr>
               <tr><td><strong>네이버쇼핑</strong></td><td>검색/비교</td><td>트래픽 독점, 데이터</td><td>개인화 부족</td><td class="highlight">AI 개인 큐레이션</td></tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         <div class="grid" style="margin-top:32px;">
@@ -1137,8 +1144,8 @@
         </div>
 
         <h3 style="margin:32px 0 16px;">핵심 KPI 추적 지표</h3>
-        <div class="card" style="overflow-x:auto;">
-          <table class="comp-table">
+        <div class="card">
+          <div class="table-scroll"><table class="comp-table">
             <thead><tr><th>카테고리</th><th>지표</th><th>Phase 1</th><th>Phase 2</th><th>Phase 3</th></tr></thead>
             <tbody>
               <tr><td>Growth</td><td>월 신규 고객</td><td>500명</td><td>800명</td><td>1,500명</td></tr>
@@ -1148,7 +1155,7 @@
               <tr><td>Engagement</td><td>30일 리텐션</td><td>45%</td><td>55%</td><td>65%</td></tr>
               <tr><td>AI</td><td>AI 추천 전환율</td><td>-</td><td>2%→4%</td><td>6%+</td></tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
     </section>
@@ -1230,8 +1237,8 @@
         </div>
 
         <h3 style="margin:32px 0 16px;">기술 마일스톤</h3>
-        <div class="card" style="overflow-x:auto;">
-          <table class="comp-table">
+        <div class="card">
+          <div class="table-scroll"><table class="comp-table">
             <thead><tr><th>시점</th><th>마일스톤</th><th>핵심 결과물</th></tr></thead>
             <tbody>
               <tr><td><strong>2주</strong></td><td>MVP 출시</td><td>100개 상품 사이트 + 기본 추천</td></tr>
@@ -1239,7 +1246,7 @@
               <tr><td><strong>6개월</strong></td><td>추천 엔진 안정화</td><td>1,000개 상품, 개인화 추천 시작</td></tr>
               <tr><td><strong>12개월</strong></td><td>자율 큐레이션 v1</td><td class="highlight">10,000개 상품, 자동 크롤링+스코어링</td></tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
       </div>
     </section>
