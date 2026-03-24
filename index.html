@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="theme-dark">
+<html lang="ko" class="theme-light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,15 +13,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root { interpolate-size: allow-keywords; }
 
-    html.theme-dark {
-      --bg: #0A0A0A; --surface: #141414; --surface-hover: #1C1C1C;
-      --border: rgba(255,255,255,0.06);
-      --text: #EDEDED; --text-secondary: #888;
-      --accent: #6366f1; --accent-secondary: #8b5cf6;
-      --positive: #10b981; --negative: #f43f5e; --warning: #f59e0b;
-      --glass-bg: rgba(255,255,255,0.03);
-    }
-    html.theme-light {
+    html, html.theme-light {
       --bg: #FAFAF9; --surface: #FFFFFF; --surface-hover: #F5F5F4;
       --border: rgba(0,0,0,0.08);
       --text: #0f172a; --text-secondary: #64748b;
@@ -1453,21 +1445,8 @@
       cObs.observe(counterEl);
     }
 
-    // === Theme (wrapped for iOS WebView safety) ===
-    try {
-      var savedTheme = localStorage.getItem('viz-theme');
-      var currentTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    } catch(e) {
-      var currentTheme = (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-    }
-    function applyTheme(t) {
-      document.documentElement.className = 'theme-' + t;
-      try { localStorage.setItem('viz-theme', t); } catch(e) {}
-      currentTheme = t;
-      if (typeof onThemeChange === 'function') onThemeChange();
-    }
-    function cycleTheme() { applyTheme(currentTheme === 'dark' ? 'light' : 'dark'); }
-    applyTheme(currentTheme);
+    // === Theme: Light mode fixed ===
+    document.documentElement.className = 'theme-light';
 
     // === Keyboard: Escape closes drawer ===
     document.addEventListener('keydown', function(e) {
@@ -1511,8 +1490,8 @@
       if (typeof Chart === 'undefined') return;
       document.body.classList.add('charts-active');
       var c = getChartColors();
-      var isDark = document.documentElement.classList.contains('theme-dark');
-      var gridColor = isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.06)';
+      var isDark = false;
+      var gridColor = 'rgba(0,0,0,0.06)';
 
       // Market Size Chart
       var ctx1 = resetCanvas('marketSizeChart');
@@ -1766,10 +1745,6 @@
       chartsBuilt = true;
     }
 
-    function onThemeChange() {
-      chartsBuilt = false;
-      setTimeout(buildCharts, 100);
-    }
 
 
     // === Vision Tab: Filter Comparison ===
