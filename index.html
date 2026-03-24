@@ -62,7 +62,7 @@
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
     /* HERO */
-    .hero { padding: 100px 0 80px; position: relative; overflow: hidden; }
+    .hero { padding: 0 0 80px; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 70%); pointer-events: none; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; background: var(--glass-bg); border: 1px solid var(--border); font-size: 0.8rem; font-weight: 500; color: var(--text-secondary); margin-bottom: 20px; }
     .hero-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; margin-bottom: 16px; line-height: 1.08; }
@@ -350,7 +350,7 @@
     @media (max-width: 768px) {
       .grid, .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 16px; }
       .container { padding: 0 16px; }
-      .hero { padding: 60px 0 40px; }
+      .hero { padding: 0 0 40px; }
       h1, .hero-title { font-size: 2rem; }
       h2 { font-size: 1.5rem; }
       .section { padding: 40px 0; }
@@ -476,13 +476,16 @@
     <!-- HERO -->
     <section class="hero section" data-section="overview">
       <div class="container">
+        <div class="animate" style="margin-bottom:32px;">
+          <img src="https://github.com/coolmoonchoi/coolmoonchoi.github.io/blob/main/suwada%20001.jpg?raw=true" alt="MOONNS 100 제품 이미지" style="max-width:100%; height:auto; border-radius:0;">
+        </div>
         <div class="animate">
           <div class="hero-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             전략 대시보드 v1.0
           </div>
         </div>
-        <h1 class="hero-title animate delay-1">AI 시대의 역발상,<br><span class="accent">MOONNS 100</span></h1>
+        <h1 class="hero-title animate delay-1">AI 시대의 역발상,<br><span class="accent" style="font-weight:900;">MOONNS 100</span></h1>
         <p class="hero-subtitle animate delay-2">안목(Curation)과 신뢰(Trust)를 무기로, AI의 확장성을 더해 만드는 차세대 큐레이션 커머스 플랫폼</p>
         <div class="hero-formula animate delay-3">
           성공<span class="op">=</span>(안목<span class="op">×</span>독점 데이터)<span class="op">+</span>AI 확장성
