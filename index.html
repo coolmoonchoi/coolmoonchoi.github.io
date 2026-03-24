@@ -476,7 +476,7 @@
     <!-- HERO -->
     <section class="hero section" data-section="overview">
       <div class="container">
-        <div class="animate" style="margin-bottom:32px;">
+        <div class="animate" style="margin-bottom:32px; cursor:pointer;" onclick="(function(el){var imgs=['https://github.com/coolmoonchoi/coolmoonchoi.github.io/blob/main/suwada%20001.jpg?raw=true','https://github.com/coolmoonchoi/coolmoonchoi.github.io/blob/main/suwada%20002.jpg?raw=true'];var img=el.querySelector('img');var i=imgs.indexOf(img.src)>=0?imgs.indexOf(img.src):0;img.src=imgs[(i+1)%2];})(this)">
           <img src="https://github.com/coolmoonchoi/coolmoonchoi.github.io/blob/main/suwada%20001.jpg?raw=true" alt="MOONNS 100 제품 이미지" style="max-width:100%; height:auto; border-radius:0;">
         </div>
         <div class="animate">
@@ -565,7 +565,10 @@
     <section class="container" aria-label="문제 인식" data-reveal>
       <div class="section-label">Problem</div>
       <h2 class="section-title">AI 시대의 역설</h2>
-      <p class="section-desc">모두가 AI를 쓰는 시대, 기술과 재능만으로는 차별화할 수 없다. 그렇다면 남은 것은 무엇인가?</p>
+      <p class="section-desc">모두가 AI를 쓰는 시대, 기술과 재능만으로는 차별화할 수 없다. 그렇다면 남은 것은 무엇인가? 바로</p>
+      <div style="margin-top: 16px; margin-bottom: 48px; text-align: left;">
+        <span style="font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; color: var(--accent); letter-spacing: -0.04em; line-height: 1; display: block;">취향</span>
+      </div>
       <div class="insight-grid">
         <div class="insight-card">
           <div class="insight-icon">
